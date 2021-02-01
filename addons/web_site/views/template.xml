@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+   <data>
+       <record id="menu_cuong" model="ir.ui.view">
+           <field name="name">CMC</field> <!-- Name of the menu-->
+           <field name="type">qweb</field>
+           <field name="key">website.cmc</field>
+           <field name="mode">primary</field>
+           <field name="active">True</field>
+           <field name="arch" type="xml">
+                <t name="CMC Globle" t-name="website.cmc">
+                    <t t-call="website.layout">
+                        <t t-set="pageName" t-value="homepage"/>
+                        <div id="wrap" class="oe_structure oe_empty">
+                            <header class="masthead d-flex">
+                                <div class="container text-center my-auto">
+                                    <h1 class="mb-1">This is header</h1>
+                                    <h3>
+                                        <em>day la dau?</em>
+                                    </h3>
+                                </div>
+                            </header>
+
+                            <section class="content-section bg-light" id="content">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <h2>This is Body</h2>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <footer class="footer text-center">
+                                <div class="container">
+                                    <p>This is Footer</p>
+                                </div>
+                            </footer>
+                        </div>
+                    </t>
+                </t>
+           </field>
+       </record>
+       <record id="menu_cmc" model="website.page">
+           <field name="website_published">True</field>
+           <field name="url">/</field>
+           <field name="is_homepage">True</field>
+           <field name="view_id" ref="menu_cuong"/>
+       </record>
+   </data>
+</odoo>
